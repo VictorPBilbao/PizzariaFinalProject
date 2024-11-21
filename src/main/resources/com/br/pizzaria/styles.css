@@ -1,0 +1,43 @@
+.root {
+    -fx-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -fx-background-color: #f4f4f4;
+}
+
+.button {
+    -fx-background-color: #6200ee;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 5px;
+}
+
+.button:hover {
+    -fx-background-color: #3700b3;
+}
+
+.label {
+    -fx-font-size: 16px;
+    -fx-text-fill: #333;
+}
+
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+    -fx-font-size: 14px;
+}
+
+.text-field:focused {
+    -fx-border-color: #6200ee;
+}
+
+.header-text {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+.vbox {
+    -fx-padding: 20px;
+}
