@@ -22,6 +22,7 @@
                 <RowConstraints valignment="CENTER" />
                 <RowConstraints />
                 <RowConstraints />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" />
                 <RowConstraints />
                 <RowConstraints />
             </rowConstraints>
@@ -32,10 +33,10 @@
                 <TextField fx:id="sobrenomeCliente" promptText="Seu sobrenome" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                 <Label text="CEP" GridPane.rowIndex="2" />
                 <TextField fx:id="CEPCliente" promptText="Seu CEP" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                <Label text="Telefone" GridPane.rowIndex="3" />
-                <TextField fx:id="telefoneCliente" promptText="Seu telefone" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                <Label text="Numero" GridPane.rowIndex="4" />
-                <TextField fx:id="numeroDaCasaCliente" promptText="Número da casa" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <Label text="Telefone" GridPane.rowIndex="4" />
+                <TextField fx:id="telefoneCliente" promptText="Seu telefone" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <Label text="Numero" GridPane.rowIndex="3" />
+                <TextField fx:id="numeroDaCasaCliente" promptText="Número da casa" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             </children>
         </GridPane>
         <Button fx:id="loginButton" alignment="CENTER" onAction="#handleLogin" styleClass="button" text="Login" />
