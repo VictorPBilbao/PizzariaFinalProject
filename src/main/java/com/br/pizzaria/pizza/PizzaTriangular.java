@@ -12,9 +12,16 @@ public class PizzaTriangular extends Pizza {
         this.preco = calcularPreco();
     }
 
+    public PizzaTriangular(List<String> sabores, int tamanho) {
+        super(sabores);
+        this.lado = (2 * Math.sqrt(tamanho)) / Math.pow(3, 1.0 / 4.0);
+        this.area = calcularArea();
+        this.preco = calcularPreco();
+    }
+
     @Override
     public double calcularArea() {
-        return (Math.sqrt(3) / 4) * lado * lado;
+        return lado * lado * (Math.sqrt(3) / 4);
     }
 
     @Override

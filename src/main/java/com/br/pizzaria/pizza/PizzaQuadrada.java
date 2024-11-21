@@ -12,6 +12,13 @@ public class PizzaQuadrada extends Pizza {
         this.preco = calcularPreco();
     }
 
+    public PizzaQuadrada(List<String> sabores, int tamanho) {
+        super(sabores);
+        this.lado = Math.sqrt(tamanho);
+        this.area = calcularArea();
+        this.preco = calcularPreco();
+    }
+
     @Override
     public double calcularArea() {
         return lado * lado;

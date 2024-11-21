@@ -12,6 +12,13 @@ public class PizzaCircular extends Pizza {
         this.preco = calcularPreco();
     }
 
+    public PizzaCircular(List<String> sabores, int tamanho) {
+        super(sabores);
+        this.raio = Math.sqrt(tamanho / Math.PI);
+        this.area = calcularArea();
+        this.preco = calcularPreco();
+    }
+
     @Override
     public double calcularArea() {
         return Math.PI * raio * raio;
