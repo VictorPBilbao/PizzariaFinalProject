@@ -32,7 +32,7 @@ public class LoginController {
 
         Cliente cliente = new Cliente(nome, sobrenome, telefone, CEP, numeroDaCasa);
         System.out.println(cliente);
-        // App.setRoot("secondary");
+        App.setRoot("selecionarFormatoPizza");
     }
 
     @FXML

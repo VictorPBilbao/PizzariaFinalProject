@@ -8,11 +8,6 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
-
-import com.br.pizzaria.pizza.Pizza;
-import com.br.pizzaria.pizza.PizzaQuadrada;
 
 /**
  * JavaFX App
