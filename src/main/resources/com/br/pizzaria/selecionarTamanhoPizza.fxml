@@ -46,11 +46,11 @@
                 <MenuItem
                         mnemonicParsing="false"
                         onAction="#selectBySide"
-                        text="Select by Side"/>
+                        text="Por lado ou raio"/>
                 <MenuItem
                         mnemonicParsing="false"
                         onAction="#selectByArea"
-                        text="Select by Area"/>
+                        text="Por área"/>
             </items>
             <VBox.margin>
                 <Insets bottom="50.0"/>
