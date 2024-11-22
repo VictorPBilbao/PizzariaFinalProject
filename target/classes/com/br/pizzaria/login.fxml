@@ -96,6 +96,10 @@
                 onAction="#handleLogin"
                 styleClass="button"
                 text="Login"/>
+        <Label
+                fx:id="errorMessage"
+                textFill="red"
+                visible="false"/>
         <Text
                 styleClass="header-text"
                 text="Já possui um pedido? Verifique o status aqui:"/>
