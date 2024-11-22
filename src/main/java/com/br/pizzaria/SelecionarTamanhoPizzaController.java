@@ -127,7 +127,7 @@ public class SelecionarTamanhoPizzaController {
         Parent root = loader.load();
 
         SelecionarSaborPizzaController controller = loader.getController();
-        controller.setPizzaDetails(pizzaType, selectedSize);
+        controller.setPizzaDetails(pizzaType, selectedSize, pizzaMetric);
 
         Stage stage = (Stage) sizeSlider.getScene().getWindow();
         stage.setScene(new Scene(root));

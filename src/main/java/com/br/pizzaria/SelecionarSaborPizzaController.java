@@ -33,6 +33,7 @@ public class SelecionarSaborPizzaController {
     private List<CheckBox> checkBoxes;
     private String pizzaType;
     private double pizzaSize;
+    private String pizzaMetric;
 
     @FXML
     public void initialize() {
@@ -63,9 +64,14 @@ public class SelecionarSaborPizzaController {
         }
     }
 
-    public void setPizzaDetails(String pizzaType, double pizzaSize) {
+    public void setPizzaDetails(String pizzaType, double pizzaSize, String pizzaMetric) {
         this.pizzaType = pizzaType;
         this.pizzaSize = pizzaSize;
+        if (pizzaMetric.equals("cm")) {
+            this.pizzaMetric = "side";
+        } else {
+            this.pizzaMetric = "area";
+        }
     }
 
     @FXML
@@ -77,7 +83,7 @@ public class SelecionarSaborPizzaController {
             }
         }
 
-        PizzaDetails pizzaDetails = new PizzaDetails(pizzaType, pizzaSize, selectedFlavors);
+        PizzaDetails pizzaDetails = new PizzaDetails(pizzaType, pizzaMetric, pizzaSize, selectedFlavors);
         pizzaDetails.createPizza();
     }
 }

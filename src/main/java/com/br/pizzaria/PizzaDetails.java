@@ -7,12 +7,14 @@ import java.util.HashMap;
 
 public class PizzaDetails {
     private String pizzaType;
+    private String pizzaMetric;
     private double pizzaSize;
     private List<String> flavors;
     Map<String, PizzaCategorias> allSabores = new HashMap<>();
 
-    public PizzaDetails(String pizzaType, double pizzaSize, List<String> flavors) {
+    public PizzaDetails(String pizzaType, String pizzaMetric, double pizzaSize, List<String> flavors) {
         this.pizzaType = pizzaType;
+        this.pizzaMetric = pizzaMetric;
         this.pizzaSize = pizzaSize;
         this.flavors = flavors;
         allSabores.put("Margherita", PizzaCategorias.NORMAL);
@@ -34,12 +36,22 @@ public class PizzaDetails {
         }
 
         Pizza pizza;
-        if (pizzaType.equals("PizzaQuadrada")) {
-            pizza = new PizzaQuadrada(selectedFlavors, pizzaSize);
-        } else if (pizzaType.equals("PizzaTriangular")) {
-            pizza = new PizzaTriangular(selectedFlavors, pizzaSize);
+        if (pizzaMetric.equals("side")) {
+            if (pizzaType.equals("PizzaQuadrada")) {
+                pizza = new PizzaQuadrada(selectedFlavors, pizzaSize);
+            } else if (pizzaType.equals("PizzaTriangular")) {
+                pizza = new PizzaTriangular(selectedFlavors, pizzaSize);
+            } else {
+                pizza = new PizzaCircular(selectedFlavors, pizzaSize);
+            }
         } else {
-            pizza = new PizzaCircular(selectedFlavors, pizzaSize);
+            if (pizzaType.equals("PizzaQuadrada")) {
+                pizza = new PizzaQuadrada(selectedFlavors, (int) pizzaSize);
+            } else if (pizzaType.equals("PizzaTriangular")) {
+                pizza = new PizzaTriangular(selectedFlavors, (int) pizzaSize);
+            } else {
+                pizza = new PizzaCircular(selectedFlavors, (int) pizzaSize);
+            }
         }
 
         System.out.println("Pizza created: " + pizza);
