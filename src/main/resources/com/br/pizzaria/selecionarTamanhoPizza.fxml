@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.br.pizzaria.SelecionarTamanhoPizzaController">
+    <children>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Agora selecione o tamanho da pizza! ">
+            <font>
+                <Font size="24.0" />
+            </font>
+            <VBox.margin>
+                <Insets bottom="25.0" />
+            </VBox.margin>
+        </Text>
+        <MenuButton mnemonicParsing="false" text="MenuButton">
+            <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+                <MenuItem mnemonicParsing="false" text="Action 2" />
+            </items>
+            <VBox.margin>
+                <Insets bottom="50.0" />
+            </VBox.margin>
+        </MenuButton>
+        <Slider fx:id="sizeSlider" maxWidth="400.0" />
+      <Label fx:id="sliderValueLabel" text="Label" />
+        <StackPane prefHeight="304.0" prefWidth="600.0">
+            <children>
+                <ImageView fx:id="pizzaImageView" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@PizzaQuadrada.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </StackPane>
+    </children>
+</VBox>
