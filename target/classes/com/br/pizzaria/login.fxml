@@ -107,7 +107,6 @@
         <Button
                 fx:id="orderButton"
                 alignment="CENTER"
-                onAction="#handleOrder"
                 styleClass="button"
                 text="Ver Pedido"/>
     </children>

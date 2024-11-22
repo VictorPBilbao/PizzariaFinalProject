@@ -1,5 +1,7 @@
 package com.br.pizzaria;
 
+import java.io.IOException;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
@@ -107,5 +109,10 @@ public class SelecionarTamanhoPizzaController {
         System.out.println("Ajustando Imagem");
         pizzaImageView.setImage(new Image(getClass().getResourceAsStream(this.pizzaType + ".png")));
         adjustPizzaImageSize(sizeSlider.getValue()); // Adjust image size based on the current slider value
+    }
+
+    @FXML
+    private void handleNextButton() throws IOException {
+        App.setRoot("selecionarSaborPizza");
     }
 }

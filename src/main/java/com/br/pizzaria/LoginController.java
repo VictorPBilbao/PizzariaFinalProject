@@ -34,9 +34,4 @@ public class LoginController {
         System.out.println(cliente);
         App.setRoot("selecionarFormatoPizza");
     }
-
-    @FXML
-    private void handleOrder() throws IOException {
-        // App.setRoot("secondary");
-    }
 }
