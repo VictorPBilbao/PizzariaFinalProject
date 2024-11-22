@@ -19,7 +19,6 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("login"));
-        applyStylesheet(scene);
         setAppIcon(stage);
         stage.setScene(scene);
         stage.show();
@@ -27,16 +26,11 @@ public class App extends Application {
 
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
-        applyStylesheet(scene);
     }
 
     private static Parent loadFXML(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
-    }
-
-    private static void applyStylesheet(Scene scene) {
-        scene.getStylesheets().add(App.class.getResource("styles.css").toExternalForm());
     }
 
     private void setAppIcon(Stage stage) {

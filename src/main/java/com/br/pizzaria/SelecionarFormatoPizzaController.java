@@ -42,6 +42,7 @@ public class SelecionarFormatoPizzaController {
         controller.setPizzaType(pizzaType);
 
         Stage stage = (Stage) rootVBox.getScene().getWindow();
+
         stage.setScene(new Scene(root));
     }
 }

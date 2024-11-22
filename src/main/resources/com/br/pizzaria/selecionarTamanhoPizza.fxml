@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
@@ -12,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.br.pizzaria.SelecionarTamanhoPizzaController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.br.pizzaria.SelecionarTamanhoPizzaController">
     <children>
         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Agora selecione o tamanho da pizza! ">
             <font>
@@ -31,6 +32,7 @@
                 <Insets bottom="50.0" />
             </VBox.margin>
         </MenuButton>
+      <Button mnemonicParsing="false" text="Button" />
         <Slider fx:id="sizeSlider" maxWidth="400.0" />
       <Label fx:id="sliderValueLabel" text="Label" />
         <StackPane prefHeight="304.0" prefWidth="600.0">

@@ -41,3 +41,28 @@
 .vbox {
     -fx-padding: 20px;
 }
+
+.menu-button {
+    -fx-background-color: #6200ee;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 5px;
+}
+
+.menu-button:hover {
+    -fx-background-color: #3700b3;
+}
+
+.slider {
+    -fx-padding: 10px;
+    -fx-background-color: #f4f4f4;
+}
+
+.slider .track {
+    -fx-background-color: #ccc;
+}
+
+.slider .thumb {
+    -fx-background-color: #6200ee;
+}
