@@ -26,10 +26,10 @@
                     <children>
                         <VBox alignment="CENTER">
                             <children>
-                                <CheckBox fx:id="flavor1" text="Margherita" />
+                                <CheckBox fx:id="flavor1" text="Strogonoff" />
                                 <ImageView fitHeight="100.0" fitWidth="100.0">
                                     <image>
-                                        <Image url="@PizzaQuadrada.png" />
+                                        <Image url="@PizzasSabores/PizzaStrogonoff.png" />
                                     </image>
                                 </ImageView>
                             </children>
@@ -39,7 +39,7 @@
                                 <CheckBox fx:id="flavor2" text="Pepperoni" />
                                 <ImageView fitHeight="100.0" fitWidth="100.0">
                                     <image>
-                                        <Image url="@PizzaRedonda.png" />
+                                        <Image url="@PizzasSabores/PizzaCalabresa.png" />
                                     </image>
                                 </ImageView>
                             </children>
@@ -49,7 +49,7 @@
                                 <CheckBox fx:id="flavor3" text="Queijo" />
                                 <ImageView fitHeight="100.0" fitWidth="100.0">
                                     <image>
-                                        <Image url="@PizzaTriangular.png" />
+                                        <Image url="@PizzasSabores/PizzaQueijo.png" />
                                     </image>
                                 </ImageView>
                             </children>
@@ -63,7 +63,7 @@
                                 <CheckBox fx:id="flavor4" text="Frango com Catupiry" />
                                 <ImageView fitHeight="100.0" fitWidth="100.0">
                                     <image>
-                                        <Image url="@PizzaTriangular.png" />
+                                        <Image url="@PizzasSabores/PizzaFrangoComCatupiry.png" />
                                     </image>
                                 </ImageView>
                             </children>
@@ -73,7 +73,7 @@
                                 <CheckBox fx:id="flavor5" text="Quatro Queijos" />
                                 <ImageView fitHeight="100.0" fitWidth="100.0">
                                     <image>
-                                        <Image url="@PizzaRedonda.png" />
+                                        <Image url="@PizzasSabores/Pizza4Queijos.png" />
                                     </image>
                                 </ImageView>
                             </children>
@@ -83,7 +83,7 @@
                                 <CheckBox fx:id="flavor6" text="Portuguesa" />
                                 <ImageView fitHeight="100.0" fitWidth="100.0">
                                     <image>
-                                        <Image url="@PizzaQuadrada.png" />
+                                        <Image url="@PizzasSabores/PizzaPortuguesa.png" />
                                     </image>
                                 </ImageView>
                             </children>
@@ -100,7 +100,7 @@
                                 <CheckBox fx:id="flavor7" text="Mexicana" />
                                 <ImageView fitHeight="100.0" fitWidth="100.0">
                                     <image>
-                                        <Image url="@PizzaRedonda.png" />
+                                        <Image url="@PizzasSabores/PizzaMexicana.png" />
                                     </image>
                                 </ImageView>
                             </children>
@@ -110,7 +110,7 @@
                                 <CheckBox fx:id="flavor8" text="Cheddar com Bacon" />
                                 <ImageView fitHeight="100.0" fitWidth="100.0">
                                     <image>
-                                        <Image url="@PizzaQuadrada.png" />
+                                        <Image url="@PizzasSabores/PizzaCheddarComBacon.png" />
                                     </image>
                                 </ImageView>
                             </children>
@@ -120,7 +120,7 @@
                                 <CheckBox fx:id="flavor9" text="Chocolate" />
                                 <ImageView fitHeight="100.0" fitWidth="100.0">
                                     <image>
-                                        <Image url="@PizzaTriangular.png" />
+                                        <Image url="@PizzasSabores/PizzaChocolate.png" />
                                     </image>
                                 </ImageView>
                             </children>

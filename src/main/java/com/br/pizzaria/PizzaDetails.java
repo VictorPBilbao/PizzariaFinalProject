@@ -17,7 +17,7 @@ public class PizzaDetails {
         this.pizzaMetric = pizzaMetric;
         this.pizzaSize = pizzaSize;
         this.flavors = flavors;
-        allSabores.put("Margherita", PizzaCategorias.NORMAL);
+        allSabores.put("Strogonoff", PizzaCategorias.NORMAL);
         allSabores.put("Pepperoni", PizzaCategorias.NORMAL);
         allSabores.put("Queijo", PizzaCategorias.NORMAL);
         allSabores.put("Frango com Catupiry", PizzaCategorias.ESPECIAL);
