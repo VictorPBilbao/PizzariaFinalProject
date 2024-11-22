@@ -39,7 +39,8 @@
         <MenuButton
                 fx:id="menuButton"
                 mnemonicParsing="false"
-                text="Select Size Type">
+                text="Select Size Type"
+                styleClass="menu-button">
             <items>
                 <MenuItem
                         mnemonicParsing="false"
