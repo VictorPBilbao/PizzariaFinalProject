@@ -40,6 +40,7 @@ public class SelecionarFormatoPizzaController {
 
         SelecionarTamanhoPizzaController controller = loader.getController();
         controller.setPizzaType(pizzaType);
+        controller.init();
 
         Stage stage = (Stage) rootVBox.getScene().getWindow();
 

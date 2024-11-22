@@ -40,11 +40,7 @@ public class SelecionarSaborPizzaController {
         }
 
         for (CheckBox checkBox : checkBoxes) {
-            if (!checkBox.isSelected() && selectedCount >= 2) {
-                checkBox.setDisable(true);
-            } else {
-                checkBox.setDisable(false);
-            }
+            checkBox.setDisable(!checkBox.isSelected() && selectedCount >= 2);
         }
     }
 }
