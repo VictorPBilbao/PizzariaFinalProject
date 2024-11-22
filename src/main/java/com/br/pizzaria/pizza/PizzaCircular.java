@@ -1,6 +1,6 @@
 package com.br.pizzaria.pizza;
 
-import java.util.List;
+import java.util.Map;
 
 public class PizzaCircular extends Pizza {
     private static final double MIN_RAIO = 7.0;
@@ -9,7 +9,7 @@ public class PizzaCircular extends Pizza {
     private static final double MAX_AREA = Math.PI * MAX_RAIO * MAX_RAIO;
     private double raio;
 
-    public PizzaCircular(List<String> sabores, double raio) {
+    public PizzaCircular(Map<String, PizzaCategorias> sabores, double raio) {
         super(sabores);
         if (raio < MIN_RAIO || raio > MAX_RAIO) {
             throw new IllegalArgumentException("Raio deve estar entre " + MIN_RAIO + " e " + MAX_RAIO + " cm.");
@@ -22,7 +22,7 @@ public class PizzaCircular extends Pizza {
         this.preco = calcularPreco();
     }
 
-    public PizzaCircular(List<String> sabores, int tamanho) {
+    public PizzaCircular(Map<String, PizzaCategorias> sabores, int tamanho) {
         super(sabores);
         this.raio = Math.sqrt(tamanho / Math.PI);
         if (raio < MIN_RAIO || raio > MAX_RAIO) {
@@ -58,8 +58,11 @@ public class PizzaCircular extends Pizza {
 
     @Override
     public double calcularPreco() {
-        // Implement price calculation logic based on area and sabores
-        return area * 1.0; // Example calculation
+        double valorTotal = 0.0;
+        for (PizzaCategorias categoria : sabores.values()) {
+            valorTotal += categoria.getValor();
+        }
+        return area * (valorTotal / sabores.size());
     }
 
     public double getRaio() {

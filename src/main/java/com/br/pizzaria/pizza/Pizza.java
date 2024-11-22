@@ -1,13 +1,16 @@
 package com.br.pizzaria.pizza;
 
-import java.util.List;
+import java.util.Map;
 
 public abstract class Pizza {
-    protected List<String> sabores;
+    protected Map<String, PizzaCategorias> sabores;
     protected double preco;
     protected double area;
 
-    protected Pizza(List<String> sabores) {
+    protected Pizza(Map<String, PizzaCategorias> sabores) {
+        if (sabores.size() < 1 || sabores.size() > 2) {
+            throw new IllegalArgumentException("A pizza deve ter entre 1 e 2 sabores.");
+        }
         this.sabores = sabores;
     }
 
@@ -23,7 +26,7 @@ public abstract class Pizza {
         return area;
     }
 
-    public List<String> getSabores() {
+    public Map<String, PizzaCategorias> getSabores() {
         return sabores;
     }
 }

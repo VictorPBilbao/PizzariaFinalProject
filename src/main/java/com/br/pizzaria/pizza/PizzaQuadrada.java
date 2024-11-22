@@ -1,6 +1,6 @@
 package com.br.pizzaria.pizza;
 
-import java.util.List;
+import java.util.Map;
 
 public class PizzaQuadrada extends Pizza {
     private static final double MIN_LADO = 10.0;
@@ -9,7 +9,7 @@ public class PizzaQuadrada extends Pizza {
     private static final double MAX_AREA = MAX_LADO * MAX_LADO;
     private double lado;
 
-    public PizzaQuadrada(List<String> sabores, double lado) {
+    public PizzaQuadrada(Map<String, PizzaCategorias> sabores, double lado) {
         super(sabores);
         if (lado < MIN_LADO || lado > MAX_LADO) {
             throw new IllegalArgumentException("Lado deve estar entre " + MIN_LADO + " e " + MAX_LADO + " cm.");
@@ -22,7 +22,7 @@ public class PizzaQuadrada extends Pizza {
         this.preco = calcularPreco();
     }
 
-    public PizzaQuadrada(List<String> sabores, int tamanho) {
+    public PizzaQuadrada(Map<String, PizzaCategorias> sabores, int tamanho) {
         super(sabores);
         this.lado = Math.sqrt(tamanho);
         if (lado < MIN_LADO || lado > MAX_LADO) {
@@ -58,8 +58,11 @@ public class PizzaQuadrada extends Pizza {
 
     @Override
     public double calcularPreco() {
-        // Implement price calculation logic based on area and sabores
-        return area * 1.0; // Example calculation
+        double valorTotal = 0.0;
+        for (PizzaCategorias categoria : sabores.values()) {
+            valorTotal += categoria.getValor();
+        }
+        return area * (valorTotal / sabores.size());
     }
 
     public double getLado() {

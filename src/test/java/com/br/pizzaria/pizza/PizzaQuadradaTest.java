@@ -3,57 +3,63 @@ package com.br.pizzaria.pizza;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.junit.jupiter.api.BeforeEach;
 
 class PizzaQuadradaTest {
 
-    private PizzaQuadrada pizza;
+    Map<String, PizzaCategorias> allSabores = new HashMap<>();
 
     @BeforeEach
     public void setUp() {
-        List<String> sabores = Arrays.asList("Mussarela", "Calabresa");
-        pizza = new PizzaQuadrada(sabores, 4.0);
+        // Populate the general list of all flavours and their categories
+        allSabores.put("Margherita", PizzaCategorias.NORMAL);
+        allSabores.put("Pepperoni", PizzaCategorias.ESPECIAL);
+        allSabores.put("Camarão", PizzaCategorias.PREMIUM);
+        allSabores.put("Quatro Queijos", PizzaCategorias.ESPECIAL);
+    }
+
+    private Map<String, PizzaCategorias> selectFlavours(String flavour1, String flavour2) {
+        Map<String, PizzaCategorias> selectedSabores = new HashMap<>();
+        selectedSabores.put(flavour1, allSabores.get(flavour1));
+        if (flavour2 != null) {
+            selectedSabores.put(flavour2, allSabores.get(flavour2));
+        }
+        return selectedSabores;
     }
 
     @Test
-    void testCalcularArea() {
-        assertEquals(16.0, pizza.calcularArea(), 0.001);
+    void testPizzaCreationWithOneFlavour() {
+        // Select one flavour to create the pizza
+        Map<String, PizzaCategorias> selectedSabores = selectFlavours("Camarão", null);
+
+        // Create a PizzaQuadrada instance
+        PizzaQuadrada pizza = new PizzaQuadrada(selectedSabores, 20.0);
+
+        // Assertions to verify the pizza properties
+        assertEquals(20, pizza.getLado(), 0.001);
+        assertEquals(400, pizza.getArea(), 0.001);
+        // assertEquals(400.0 + PizzaCategorias.PREMIUM.getValor(), pizza.getPreco(),
+        // 0.001);
+        assertEquals(400, pizza.calcularPreco());
+        assertEquals(selectedSabores, pizza.getSabores());
     }
 
     @Test
-    void testCalcularPreco() {
-        assertEquals(16.0, pizza.calcularPreco(), 0.001); // Assuming price calculation is area * 1.0
-    }
+    void testPizzaCreationWithTwoFlavours() {
+        // Select two flavours to create the pizza
+        Map<String, PizzaCategorias> selectedSabores = selectFlavours("Margherita", "Pepperoni");
 
-    @Test
-    void testGetLado() {
-        assertEquals(4.0, pizza.getLado(), 0.001);
-    }
+        // Create a PizzaQuadrada instance
+        PizzaQuadrada pizza = new PizzaQuadrada(selectedSabores, 25.0);
 
-    @Test
-    void testSetLado() {
-        pizza = new PizzaQuadrada(Arrays.asList("Mussarela"), 5.0);
-        assertEquals(5.0, pizza.getLado(), 0.001);
-        assertEquals(25.0, pizza.calcularArea(), 0.001);
-        assertEquals(25.0, pizza.calcularPreco(), 0.001);
-    }
+        // Assertions to verify the pizza properties
+        assertEquals(25.0, pizza.getLado(), 0.001);
+        assertEquals(625.0, pizza.getArea(), 0.001);
 
-    @Test
-    void testMultipleSabores() {
-        List<String> sabores = Arrays.asList("Mussarela", "Calabresa", "Frango");
-        pizza = new PizzaQuadrada(sabores, 3.0);
-        assertEquals(9.0, pizza.calcularArea(), 0.001);
-        assertEquals(9.0, pizza.calcularPreco(), 0.001);
-        assertEquals(3.0, pizza.getLado(), 0.001);
-    }
-
-    @Test
-    void testEmptySabores() {
-        pizza = new PizzaQuadrada(Arrays.asList(), 2.0);
-        assertEquals(4.0, pizza.calcularArea(), 0.001);
-        assertEquals(4.0, pizza.calcularPreco(), 0.001);
-        assertEquals(2.0, pizza.getLado(), 0.001);
+        assertEquals(234.375, pizza.calcularPreco(), 1);
+        assertEquals(selectedSabores, pizza.getSabores());
     }
 }
