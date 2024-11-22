@@ -43,18 +43,6 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-        // create flavor of pizzas and their categories ( 3 each )
-        Map<String, PizzaCategorias> allSabores = new HashMap<>();
-        allSabores.put("Margherita", PizzaCategorias.NORMAL);
-        allSabores.put("Pepperoni", PizzaCategorias.NORMAL);
-        allSabores.put("Queijo", PizzaCategorias.NORMAL);
-        allSabores.put("Camarão", PizzaCategorias.ESPECIAL);
-        allSabores.put("Quatro Queijos", PizzaCategorias.ESPECIAL);
-        allSabores.put("Portuguesa", PizzaCategorias.ESPECIAL);
-        allSabores.put("Frango com Catupiry", PizzaCategorias.PREMIUM);
-        allSabores.put("Cheddar com Bacon", PizzaCategorias.PREMIUM);
-        allSabores.put("Calabresa", PizzaCategorias.PREMIUM);
-
         launch();
     }
 

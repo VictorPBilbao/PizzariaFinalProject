@@ -8,6 +8,10 @@ import javafx.scene.control.MenuButton;
 import javafx.scene.control.Slider;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 public class SelecionarTamanhoPizzaController {
 
@@ -18,6 +22,7 @@ public class SelecionarTamanhoPizzaController {
     private String pizzaType;
     private boolean selectByArea = false;
     private String pizzaMetric;
+    private double selectedSize;
 
     @FXML
     private Slider sizeSlider;
@@ -111,8 +116,20 @@ public class SelecionarTamanhoPizzaController {
         adjustPizzaImageSize(sizeSlider.getValue()); // Adjust image size based on the current slider value
     }
 
+    public double getSelectedSize() {
+        return selectedSize;
+    }
+
     @FXML
     private void handleNextButton() throws IOException {
-        App.setRoot("selecionarSaborPizza");
+        selectedSize = sizeSlider.getValue();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("selecionarSaborPizza.fxml"));
+        Parent root = loader.load();
+
+        SelecionarSaborPizzaController controller = loader.getController();
+        controller.setPizzaDetails(pizzaType, selectedSize);
+
+        Stage stage = (Stage) sizeSlider.getScene().getWindow();
+        stage.setScene(new Scene(root));
     }
 }

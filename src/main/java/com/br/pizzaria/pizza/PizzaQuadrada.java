@@ -65,6 +65,11 @@ public class PizzaQuadrada extends Pizza {
         return area * (valorTotal / sabores.size());
     }
 
+    @Override
+    public String toString() {
+        return "PizzaQuadrada [lado=" + lado + ", sabores=" + sabores + ", preco=" + preco + ", area=" + area + "]";
+    }
+
     public double getLado() {
         return lado;
     }

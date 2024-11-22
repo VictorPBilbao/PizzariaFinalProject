@@ -29,4 +29,9 @@ public abstract class Pizza {
     public Map<String, PizzaCategorias> getSabores() {
         return sabores;
     }
+
+    @Override
+    public String toString() {
+        return "Pizza [sabores=" + sabores + ", preco=" + preco + ", area=" + area + "]";
+    }
 }

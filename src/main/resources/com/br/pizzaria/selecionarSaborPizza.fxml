@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650" prefWidth="550" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.br.pizzaria.SelecionarSaborPizzaController">
+    <children>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Agora selecione até 2 sabores!">
+            <VBox.margin>
+                <Insets bottom="50.0" />
+            </VBox.margin>
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+        </Text>
+        <VBox alignment="CENTER" spacing="10.0">
+            <children>
+                <HBox alignment="CENTER" spacing="25.0">
+                    <children>
+                        <VBox alignment="CENTER">
+                            <children>
+                                <CheckBox fx:id="flavor1" text="Margherita" />
+                                <ImageView fitHeight="100.0" fitWidth="100.0">
+                                    <image>
+                                        <Image url="@PizzaQuadrada.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </VBox>
+                        <VBox alignment="CENTER">
+                            <children>
+                                <CheckBox fx:id="flavor2" text="Pepperoni" />
+                                <ImageView fitHeight="100.0" fitWidth="100.0">
+                                    <image>
+                                        <Image url="@PizzaRedonda.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </VBox>
+                        <VBox alignment="CENTER">
+                            <children>
+                                <CheckBox fx:id="flavor3" text="Queijo" />
+                                <ImageView fitHeight="100.0" fitWidth="100.0">
+                                    <image>
+                                        <Image url="@PizzaTriangular.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" spacing="25.0">
+                    <children>
+                        <VBox alignment="CENTER">
+                            <children>
+                                <CheckBox fx:id="flavor4" text="Frango com Catupiry" />
+                                <ImageView fitHeight="100.0" fitWidth="100.0">
+                                    <image>
+                                        <Image url="@PizzaTriangular.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </VBox>
+                        <VBox alignment="CENTER">
+                            <children>
+                                <CheckBox fx:id="flavor5" text="Quatro Queijos" />
+                                <ImageView fitHeight="100.0" fitWidth="100.0">
+                                    <image>
+                                        <Image url="@PizzaRedonda.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </VBox>
+                        <VBox alignment="CENTER">
+                            <children>
+                                <CheckBox fx:id="flavor6" text="Portuguesa" />
+                                <ImageView fitHeight="100.0" fitWidth="100.0">
+                                    <image>
+                                        <Image url="@PizzaQuadrada.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </VBox>
+                    </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+                </HBox>
+                <HBox alignment="CENTER" spacing="25.0">
+                    <children>
+                        <VBox alignment="CENTER">
+                            <children>
+                                <CheckBox fx:id="flavor7" text="Mexicana" />
+                                <ImageView fitHeight="100.0" fitWidth="100.0">
+                                    <image>
+                                        <Image url="@PizzaRedonda.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </VBox>
+                        <VBox alignment="CENTER">
+                            <children>
+                                <CheckBox fx:id="flavor8" text="Cheddar com Bacon" />
+                                <ImageView fitHeight="100.0" fitWidth="100.0">
+                                    <image>
+                                        <Image url="@PizzaQuadrada.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </VBox>
+                        <VBox alignment="CENTER">
+                            <children>
+                                <CheckBox fx:id="flavor9" text="Chocolate" />
+                                <ImageView fitHeight="100.0" fitWidth="100.0">
+                                    <image>
+                                        <Image url="@PizzaTriangular.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <Button fx:id="NextButton" mnemonicParsing="false" onAction="#handleNextButton" text="Continuar" />
+            </children>
+        </VBox>
+    </children>
+</VBox>
