@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.br.pizzaria.SelecionarSaborPizzaController">
+    <children>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Selecione os sabores da pizza">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Text>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+              <CheckBox fx:id="calabresaCheckBox" text="Calabresa" />
+            <ImageView fitHeight="54.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@PizzaTriangular.png" />
+               </image>
+            </ImageView>
+              <CheckBox fx:id="mussarelaCheckBox" text="Mussarela" />
+            <ImageView fitHeight="54.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@PizzaTriangular.png" />
+               </image>
+            </ImageView>
+              <CheckBox fx:id="portuguesaCheckBox" text="Portuguesa" />
+            <ImageView fitHeight="54.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@PizzaTriangular.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <CheckBox fx:id="calabresaCheckBox1" text="Calabresa" />
+            <CheckBox fx:id="mussarelaCheckBox1" text="Mussarela" />
+            <CheckBox fx:id="portuguesaCheckBox1" text="Portuguesa" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <CheckBox fx:id="calabresaCheckBox2" text="Calabresa" />
+            <CheckBox fx:id="mussarelaCheckBox2" text="Mussarela" />
+            <CheckBox fx:id="portuguesaCheckBox2" text="Portuguesa" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <CheckBox fx:id="calabresaCheckBox3" text="Calabresa" />
+            <CheckBox fx:id="mussarelaCheckBox3" text="Mussarela" />
+            <CheckBox fx:id="portuguesaCheckBox3" text="Portuguesa" />
+         </children>
+      </HBox>
+    </children>
+    <padding>
+        <Insets top="20.0" />
+    </padding>
+</VBox>
