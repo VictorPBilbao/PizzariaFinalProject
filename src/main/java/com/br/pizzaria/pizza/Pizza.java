@@ -35,12 +35,12 @@ public abstract class Pizza {
     @Override
     public String toString() {
         if (sabores.size() == 1) {
-            return "1 Pizza " + getFORMATO() + " de " + sabores.keySet().toArray()[0] + ", Area: " + area
-                    + " totalizando R$: " + preco;
+            return String.format("1 Pizza %s de %s, Area: %.2f cm² totalizando R$: %.2f", getFORMATO(),
+                    sabores.keySet().toArray()[0], area, preco);
         } else {
             Object[] keys = sabores.keySet().toArray();
-            return "1 Pizza " + getFORMATO() + " metade " + keys[0] + " e metade " + keys[1]
-                    + ", Area: " + area + " totalizando R$: " + preco;
+            return String.format("1 Pizza %s metade %s e metade %s, Area: %.2f cm² totalizando R$: %.2f", getFORMATO(),
+                    keys[0], keys[1], area, preco);
         }
     }
 }
