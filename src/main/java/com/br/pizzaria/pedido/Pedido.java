@@ -4,28 +4,40 @@ import java.util.List;
 
 import com.br.pizzaria.cliente.Cliente;
 import com.br.pizzaria.pizza.Pizza;
+import java.util.Random;
 
 public class Pedido {
-    private int id;
+    private String id;
     private Cliente cliente;
     private List<Pizza> pizzas;
     private double precoTotal;
     private EstadoPedido estado;
 
     public Pedido(int id, Cliente cliente, List<Pizza> pizzas, EstadoPedido estado) {
-        this.id = id;
+        this.id = gerarIdAleatorio();
         this.cliente = cliente;
         this.pizzas = pizzas;
         this.estado = estado;
         this.precoTotal = calcularPrecoTotal();
     }
 
+    public static String gerarIdAleatorio() {
+        int length = 7;
+        String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        Random random = new Random();
+        StringBuilder id = new StringBuilder(length);
+        for (int i = 0; i < length; i++) {
+            id.append(chars.charAt(random.nextInt(chars.length())));
+        }
+        return id.toString();
+    }
+
     // Getters and Setters
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

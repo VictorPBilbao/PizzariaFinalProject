@@ -1,6 +1,8 @@
 package com.br.pizzaria;
 
 import com.br.pizzaria.cliente.Cliente;
+import com.br.pizzaria.pedido.EstadoPedido;
+import com.br.pizzaria.pedido.Pedido;
 import com.br.pizzaria.pizza.Pizza;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +12,7 @@ public class PedidoSingleton {
 
     private Cliente cliente;
     private List<Pizza> pizzas;
+    private Pedido pedido;
 
     private PedidoSingleton() {
         pizzas = new ArrayList<>();
@@ -21,6 +24,10 @@ public class PedidoSingleton {
 
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
+    }
+
+    public void setPedido() {
+        this.pedido = new Pedido(1, cliente, pizzas, EstadoPedido.ABERTO);
     }
 
     public void addPizza(Pizza pizza) {
@@ -47,5 +54,9 @@ public class PedidoSingleton {
 
     public List<Pizza> getPizzas() {
         return pizzas;
+    }
+
+    public Pedido getPedido() {
+        return pedido;
     }
 }

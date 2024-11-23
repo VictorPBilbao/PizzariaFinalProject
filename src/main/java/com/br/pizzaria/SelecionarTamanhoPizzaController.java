@@ -68,7 +68,7 @@ public class SelecionarTamanhoPizzaController {
     @FXML
     private void selectBySide() {
         selectByArea = false;
-        menuButton.setText("Select by Side");
+        menuButton.setText("Selecionar por Lado ou Raio");
         pizzaMetric = "cm";
         setSizeSlider();
     }
@@ -76,7 +76,7 @@ public class SelecionarTamanhoPizzaController {
     @FXML
     private void selectByArea() {
         selectByArea = true;
-        menuButton.setText("Select by Area");
+        menuButton.setText("Selecionar por Área");
         pizzaMetric = "cm²";
         setSizeSlider();
     }
@@ -100,13 +100,13 @@ public class SelecionarTamanhoPizzaController {
         } else if (pizzaType.equals("PizzaTriangular")) {
             this.minSizeSide = 20;
             this.maxSizeSide = 60;
-            this.minSizeArea = 173;
-            this.maxSizeArea = 1558;
+            this.minSizeArea = 100;
+            this.maxSizeArea = 1600;
         } else if (pizzaType.equals("PizzaRedonda")) {
             this.minSizeSide = 7;
             this.maxSizeSide = 23;
-            this.minSizeArea = 153;
-            this.maxSizeArea = 1661;
+            this.minSizeArea = 100;
+            this.maxSizeArea = 1600;
         }
     }
 

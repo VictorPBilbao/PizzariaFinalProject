@@ -58,6 +58,9 @@ public class SelecionarSaborPizzaController {
         for (CheckBox checkBox : checkBoxes) {
             checkBox.setOnAction(event -> handleCheckBoxSelection());
         }
+
+        // Initially disable the NextButton
+        NextButton.setDisable(true);
     }
 
     private void handleCheckBoxSelection() {
@@ -69,6 +72,9 @@ public class SelecionarSaborPizzaController {
                 checkBox.setDisable(disable);
             }
         }
+
+        // Enable NextButton if at least one checkbox is selected
+        NextButton.setDisable(selectedCount == 0);
     }
 
     public void setPizzaDetails(String pizzaType, double pizzaSize, String pizzaMetric) {
