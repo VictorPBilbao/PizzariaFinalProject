@@ -28,7 +28,7 @@ public class PizzaDetails {
         allSabores.put("Chocolate", PizzaCategorias.PREMIUM);
     }
 
-    public void createPizza() {
+    public Pizza createPizza() {
         Map<String, PizzaCategorias> selectedFlavors = new HashMap<>();
         for (String flavor : flavors) {
             PizzaCategorias category = allSabores.getOrDefault(flavor, PizzaCategorias.NORMAL);
@@ -55,5 +55,6 @@ public class PizzaDetails {
         }
 
         System.out.println("Pizza created: " + pizza);
+        return pizza;
     }
 }

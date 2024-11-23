@@ -14,6 +14,8 @@ public abstract class Pizza {
         this.sabores = sabores;
     }
 
+    public abstract String getFORMATO();
+
     public abstract double calcularArea();
 
     public abstract double calcularPreco();
@@ -32,6 +34,13 @@ public abstract class Pizza {
 
     @Override
     public String toString() {
-        return "Pizza [sabores=" + sabores + ", preco=" + preco + ", area=" + area + "]";
+        if (sabores.size() == 1) {
+            return "1 Pizza " + getFORMATO() + " de " + sabores.keySet().toArray()[0] + ", Area: " + area
+                    + " totalizando R$: " + preco;
+        } else {
+            Object[] keys = sabores.keySet().toArray();
+            return "1 Pizza " + getFORMATO() + " metade " + keys[0] + " e metade " + keys[1]
+                    + ", Area: " + area + " totalizando R$: " + preco;
+        }
     }
 }

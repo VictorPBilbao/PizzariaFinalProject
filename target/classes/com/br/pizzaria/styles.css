@@ -119,3 +119,28 @@
 .text.italic {
     -fx-font-style: italic;
 }
+
+/* New styles for ListView */
+.list-view {
+    -fx-background-color: white;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 5px;
+    -fx-padding: 10px;
+}
+
+.list-view .list-cell {
+    -fx-background-color: white;
+    -fx-border-color: #eee;
+    -fx-border-width: 0 0 1px 0;
+    -fx-padding: 10px;
+    -fx-font-size: 14px;
+}
+
+.list-view .list-cell:hover {
+    -fx-background-color: #f4f4f4;
+}
+
+.list-view .list-cell:selected {
+    -fx-background-color: #6200ee;
+    -fx-text-fill: white;
+}

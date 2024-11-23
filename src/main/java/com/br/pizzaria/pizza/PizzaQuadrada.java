@@ -7,6 +7,7 @@ public class PizzaQuadrada extends Pizza {
     private static final double MAX_LADO = 40.0;
     private static final double MIN_AREA = MIN_LADO * MIN_LADO;
     private static final double MAX_AREA = MAX_LADO * MAX_LADO;
+    private static final String FORMATO = "Quadrada";
     private double lado;
 
     public PizzaQuadrada(Map<String, PizzaCategorias> sabores, double lado) {
@@ -33,6 +34,10 @@ public class PizzaQuadrada extends Pizza {
             throw new IllegalArgumentException("Área deve estar entre " + MIN_AREA + " e " + MAX_AREA + " cm².");
         }
         this.preco = calcularPreco();
+    }
+
+    public String getFORMATO() {
+        return FORMATO;
     }
 
     public static double getMinLado() {
@@ -63,11 +68,6 @@ public class PizzaQuadrada extends Pizza {
             valorTotal += categoria.getValor();
         }
         return area * (valorTotal / sabores.size());
-    }
-
-    @Override
-    public String toString() {
-        return "PizzaQuadrada [lado=" + lado + ", sabores=" + sabores + ", preco=" + preco + ", area=" + area + "]";
     }
 
     public double getLado() {

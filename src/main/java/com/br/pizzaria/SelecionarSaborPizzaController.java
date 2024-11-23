@@ -1,9 +1,14 @@
 package com.br.pizzaria;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.CheckBox;
+import javafx.stage.Stage;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +34,8 @@ public class SelecionarSaborPizzaController {
     private CheckBox flavor9;
     @FXML
     private Button NextButton;
+
+    PedidoSingleton pedido = PedidoSingleton.getInstance();
 
     private List<CheckBox> checkBoxes;
     private String pizzaType;
@@ -75,7 +82,7 @@ public class SelecionarSaborPizzaController {
     }
 
     @FXML
-    private void handleNextButton() {
+    private void handleNextButton() throws IOException {
         List<String> selectedFlavors = new ArrayList<>();
         for (CheckBox checkBox : checkBoxes) {
             if (checkBox.isSelected()) {
@@ -84,6 +91,13 @@ public class SelecionarSaborPizzaController {
         }
 
         PizzaDetails pizzaDetails = new PizzaDetails(pizzaType, pizzaMetric, pizzaSize, selectedFlavors);
-        pizzaDetails.createPizza();
+        pedido.addPizza(pizzaDetails.createPizza());
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("adicionarNovaPizza.fxml"));
+        Parent root = loader.load();
+
+        Stage stage = (Stage) NextButton.getScene().getWindow();
+        stage.setScene(new Scene(root));
+
     }
 }

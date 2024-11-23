@@ -7,6 +7,7 @@ public class PizzaTriangular extends Pizza {
     private static final double MAX_LADO = 60.0;
     private static final double MIN_AREA = MIN_LADO * MIN_LADO * (Math.sqrt(3) / 4);
     private static final double MAX_AREA = MAX_LADO * MAX_LADO * (Math.sqrt(3) / 4);
+    private static final String FORMATO = "Triangular";
     private double lado;
 
     public PizzaTriangular(Map<String, PizzaCategorias> sabores, double lado) {
@@ -33,6 +34,10 @@ public class PizzaTriangular extends Pizza {
             throw new IllegalArgumentException("Área deve estar entre " + MIN_AREA + " e " + MAX_AREA + " cm².");
         }
         this.preco = calcularPreco();
+    }
+
+    public String getFORMATO() {
+        return FORMATO;
     }
 
     public static double getMinLado() {
