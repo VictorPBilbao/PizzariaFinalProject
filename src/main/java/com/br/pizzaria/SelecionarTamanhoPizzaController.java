@@ -104,7 +104,7 @@ public class SelecionarTamanhoPizzaController {
         } else if (pizzaType.equals("PizzaTriangular")) {
             this.minSizeSide = 20;
             this.maxSizeSide = 60;
-            this.minSizeArea = 173;
+            this.minSizeArea = 174;
             this.maxSizeArea = 1558;
         } else if (pizzaType.equals("PizzaRedonda")) {
             this.minSizeSide = 7;
