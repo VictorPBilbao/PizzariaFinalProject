@@ -48,6 +48,9 @@ public class SelecionarTamanhoPizzaController {
     }
 
     public void setSizeSlider() {
+        sizeSlider.setBlockIncrement(4); // Ensure the slider increases by 1 unit
+        sizeSlider.setMajorTickUnit(4); // Set major tick unit to 1
+        sizeSlider.setSnapToTicks(true); // Snap to the nearest tick
         if (selectByArea) {
             sizeSlider.setMin(minSizeArea);
             sizeSlider.setMax(maxSizeArea);
@@ -63,6 +66,7 @@ public class SelecionarTamanhoPizzaController {
             sliderValueLabel.setText(String.format("%.0f %s", newValue.doubleValue(), pizzaMetric));
             adjustPizzaImageSize(newValue.doubleValue());
         });
+
     }
 
     @FXML
@@ -100,13 +104,13 @@ public class SelecionarTamanhoPizzaController {
         } else if (pizzaType.equals("PizzaTriangular")) {
             this.minSizeSide = 20;
             this.maxSizeSide = 60;
-            this.minSizeArea = 100;
-            this.maxSizeArea = 1600;
+            this.minSizeArea = 173;
+            this.maxSizeArea = 1558;
         } else if (pizzaType.equals("PizzaRedonda")) {
             this.minSizeSide = 7;
             this.maxSizeSide = 23;
-            this.minSizeArea = 100;
-            this.maxSizeArea = 1600;
+            this.minSizeArea = 153;
+            this.maxSizeArea = 1661;
         }
     }
 

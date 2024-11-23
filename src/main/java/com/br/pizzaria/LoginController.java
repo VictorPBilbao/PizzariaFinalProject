@@ -44,26 +44,26 @@ public class LoginController implements Initializable {
         String CEP = CEPCliente.getText();
         String numeroDaCasa = numeroDaCasaCliente.getText();
 
-        if (nome.isEmpty() || sobrenome.isEmpty() || telefone.isEmpty() ||
-                CEP.isEmpty() || numeroDaCasa.isEmpty()) {
-            errorMessage.setText("Todos os campos devem ser preenchidos.");
-            errorMessage.setVisible(true);
-            return;
-        }
+        // if (nome.isEmpty() || sobrenome.isEmpty() || telefone.isEmpty() ||
+        // CEP.isEmpty() || numeroDaCasa.isEmpty()) {
+        // errorMessage.setText("Todos os campos devem ser preenchidos.");
+        // errorMessage.setVisible(true);
+        // return;
+        // }
 
-        if (!telefone.matches("\\d{11}")) {
-            errorMessage.setText("O telefone deve conter 11 dígitos numéricos.");
-            errorMessage.setVisible(true);
-            return;
-        }
+        // if (!telefone.matches("\\d{11}")) {
+        // errorMessage.setText("O telefone deve conter 11 dígitos numéricos.");
+        // errorMessage.setVisible(true);
+        // return;
+        // }
 
-        if (!CEP.matches("\\d{8}")) {
-            errorMessage.setText("O CEP deve conter 8 dígitos numéricos.");
-            errorMessage.setVisible(true);
-            return;
-        }
+        // if (!CEP.matches("\\d{8}")) {
+        // errorMessage.setText("O CEP deve conter 8 dígitos numéricos.");
+        // errorMessage.setVisible(true);
+        // return;
+        // }
 
-        errorMessage.setVisible(false);
+        // errorMessage.setVisible(false);
 
         Cliente cliente = new Cliente(nome, sobrenome, telefone, CEP, numeroDaCasa);
         pedido.setCliente(cliente);
