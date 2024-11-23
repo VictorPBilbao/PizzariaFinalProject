@@ -12,6 +12,14 @@
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
     <dependencies>
+
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx</artifactId>
+            <version>24-ea+15</version>
+            <type>pom</type>
+        </dependency>
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
@@ -44,6 +52,10 @@
                 <version>0.0.6</version>
                 <configuration>
                     <mainClass>com.br.pizzaria.App</mainClass>
+                    <modulePaths>
+                        <modulePath>javafx.controls</modulePath>
+                        <modulePath>javafx.fxml</modulePath>
+                    </modulePaths>
                 </configuration>
             </plugin>
             <plugin>
