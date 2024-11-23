@@ -13,7 +13,7 @@ public class Pedido {
     private double precoTotal;
     private EstadoPedido estado;
 
-    public Pedido(int id, Cliente cliente, List<Pizza> pizzas, EstadoPedido estado) {
+    public Pedido(Cliente cliente, List<Pizza> pizzas, EstadoPedido estado) {
         this.id = gerarIdAleatorio();
         this.cliente = cliente;
         this.pizzas = pizzas;

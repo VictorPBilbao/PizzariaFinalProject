@@ -144,3 +144,31 @@
     -fx-background-color: #6200ee;
     -fx-text-fill: white;
 }
+
+/* /* New styles for TableView */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 5px;
+    -fx-padding: 10px;
+    -fx-font-size: 14px;
+}
+
+.table-view .column-header {
+    -fx-background-color: #6200ee;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10px;
+    -fx-border-color: #ccc;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: #eee;
+    -fx-border-width: 0 0 1px 0;
+}

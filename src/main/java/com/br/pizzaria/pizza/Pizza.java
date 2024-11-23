@@ -32,6 +32,17 @@ public abstract class Pizza {
         return sabores;
     }
 
+    public String getSabor1() {
+        return sabores.keySet().toArray()[0].toString();
+    }
+
+    public String getSabor2() {
+        if (sabores.size() > 1) {
+            return sabores.keySet().toArray()[1].toString();
+        }
+        return "";
+    }
+
     @Override
     public String toString() {
         if (sabores.size() == 1) {

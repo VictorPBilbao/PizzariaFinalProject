@@ -26,15 +26,21 @@ public class FinalizarPedidoController {
     private Label copySuccessLabel;
 
     PedidoSingleton pedido = PedidoSingleton.getInstance();
+    PedidosSingleton pedidos = PedidosSingleton.getInstance();
 
     @FXML
     public void initialize() {
         pedido.setPedido();
+        pedidos.addPedido(pedido.getPedido());
+        System.out.println("Pedido finalizado: " + pedido.getPedido().getId());
+        System.out.println("Pedidos: " + pedidos.getPedidos().size());
+
         codigoPedidoText.setText(String.valueOf(pedido.getPedido().getId()));
     }
 
     @FXML
     public void handleVoltarMenu() throws IOException {
+        pedido.clearCurrentPizzas();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
         Parent root = loader.load();
 

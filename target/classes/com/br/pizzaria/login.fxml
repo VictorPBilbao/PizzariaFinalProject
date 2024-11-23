@@ -48,8 +48,8 @@
         <Button fx:id="loginButton" alignment="CENTER" onAction="#handleLogin" styleClass="button" text="Login" />
         <Label fx:id="errorMessage" textFill="red" visible="false" />
         <Text styleClass="header-text" text="Já possui um pedido? Verifique o status aqui:" />
-        <TextField maxWidth="-Infinity" prefHeight="26.0" prefWidth="160.0" promptText="Identificador Pedido" />
-        <Button fx:id="orderButton" alignment="CENTER" styleClass="button" text="Ver Pedido" />
+        <TextField fx:id="identificadorPedidoField" maxWidth="-Infinity" prefHeight="26.0" prefWidth="160.0" promptText="Identificador Pedido" />
+        <Button fx:id="orderButton" alignment="CENTER" onAction="#handleIdentificadorPedido" styleClass="button" text="Ver Pedido" />
     </children>
     <padding>
         <Insets top="50.0" />

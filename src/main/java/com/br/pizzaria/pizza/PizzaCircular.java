@@ -9,6 +9,7 @@ public class PizzaCircular extends Pizza {
     private static final double MAX_AREA = Math.PI * MAX_RAIO * MAX_RAIO;
     private static final String FORMATO = "Redonda";
     private double raio;
+    private double lado;
 
     public PizzaCircular(Map<String, PizzaCategorias> sabores, double raio) {
         super(sabores);
@@ -16,6 +17,7 @@ public class PizzaCircular extends Pizza {
             throw new IllegalArgumentException("Raio deve estar entre " + MIN_RAIO + " e " + MAX_RAIO + " cm.");
         }
         this.raio = raio;
+        this.lado = raio;
         this.area = calcularArea();
         if (area < MIN_AREA || area > MAX_AREA) {
             throw new IllegalArgumentException("Área deve estar entre " + MIN_AREA + " e " + MAX_AREA + " cm².");
@@ -72,5 +74,9 @@ public class PizzaCircular extends Pizza {
 
     public double getRaio() {
         return raio;
+    }
+
+    public double getLado() {
+        return lado;
     }
 }

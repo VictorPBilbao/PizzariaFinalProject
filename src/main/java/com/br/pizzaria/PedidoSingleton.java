@@ -27,7 +27,11 @@ public class PedidoSingleton {
     }
 
     public void setPedido() {
-        this.pedido = new Pedido(1, cliente, pizzas, EstadoPedido.ABERTO);
+        this.pedido = new Pedido(cliente, pizzas, EstadoPedido.ABERTO);
+    }
+
+    public void setPedido(Pedido pedido) {
+        this.pedido = pedido;
     }
 
     public void addPizza(Pizza pizza) {
@@ -48,6 +52,10 @@ public class PedidoSingleton {
         pizzas.clear();
     }
 
+    public void clearCurrentPizzas() {
+        this.pizzas = new ArrayList<>();
+    }
+
     public Cliente getCliente() {
         return cliente;
     }
@@ -59,4 +67,5 @@ public class PedidoSingleton {
     public Pedido getPedido() {
         return pedido;
     }
+
 }

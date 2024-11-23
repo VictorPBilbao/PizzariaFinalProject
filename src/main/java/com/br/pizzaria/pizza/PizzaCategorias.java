@@ -1,9 +1,9 @@
 package com.br.pizzaria.pizza;
 
 public enum PizzaCategorias {
-    NORMAL(0.03),
-    ESPECIAL(0.6),
-    PREMIUM(0.08);
+    NORMAL(0.05),
+    ESPECIAL(0.08),
+    PREMIUM(0.10);
 
     private double valor;
 
