@@ -3,11 +3,17 @@ package com.br.pizzaria;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import javafx.beans.property.SimpleStringProperty;
+
+import java.io.IOException;
 
 import com.br.pizzaria.pedido.Pedido;
 import com.br.pizzaria.pizza.Pizza;
@@ -33,7 +39,10 @@ public class DetalharPedido {
     private TableColumn<Pizza, String> colunaSabor2;
 
     @FXML
-    private Text statusPedidoText;
+    private Text pedidoCodigo;
+
+    @FXML
+    private Text pedidoStatus;
 
     @FXML
     private TableView<Pizza> pizzasTable;
@@ -43,8 +52,11 @@ public class DetalharPedido {
     @FXML
     public void initialize() {
         Pedido pedido = pedidoSingleton.getPedido();
-        statusPedidoText
-                .setText("Pedido " + pedido.getId() + ": Status " + pedido.getEstado().toString().toLowerCase());
+        // statusPedidoText.setText("Pedido " + pedido.getId() + ": Status " +
+        // pedido.getEstado().toString().toLowerCase());
+
+        pedidoCodigo.setText(pedido.getId());
+        pedidoStatus.setText(pedido.getEstado().toString());
 
         colunaFormato.setCellValueFactory(new PropertyValueFactory<>("FORMATO"));
         colunaLado.setCellValueFactory(new PropertyValueFactory<>("lado"));
@@ -61,5 +73,13 @@ public class DetalharPedido {
 
         ObservableList<Pizza> pizzas = FXCollections.observableArrayList(pedido.getPizzas());
         pizzasTable.setItems(pizzas);
+    }
+
+    @FXML
+    private void handleVoltar() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
+        Parent root = loader.load();
+        Stage stage = (Stage) pizzasTable.getScene().getWindow();
+        stage.setScene(new Scene(root));
     }
 }
