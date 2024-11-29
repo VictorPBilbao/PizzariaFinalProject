@@ -31,3 +31,5 @@ replay_pid*
 
 # Target directory
 target/
+
+dependency-reduced-pom.xml
