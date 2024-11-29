@@ -28,7 +28,7 @@
                 <RowConstraints valignment="CENTER" />
                 <RowConstraints />
                 <RowConstraints />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                <RowConstraints />
                 <RowConstraints />
                 <RowConstraints />
             </rowConstraints>
