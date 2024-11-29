@@ -1,12 +1,18 @@
 package com.br.pizzaria;
 
+import java.io.IOException;
+
 import com.br.pizzaria.pedido.Pedido;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 import javafx.collections.FXCollections;
 import javafx.beans.property.SimpleStringProperty;
 
-public class ListarPizzasAdminController {
+public class ListarPedidosAdminController {
 
     @FXML
     private TableView<Pedido> ordersTable;
@@ -31,11 +37,13 @@ public class ListarPizzasAdminController {
 
     private final PedidosSingleton pedidosSingleton = PedidosSingleton.getInstance();
 
+    PedidoSingleton pedido = PedidoSingleton.getInstance();
+
     @FXML
     public void initialize() {
         colunaId.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getId()));
-        colunaNome
-                .setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCliente().getNome()));
+        colunaNome.setCellValueFactory(
+                cellData -> new SimpleStringProperty(cellData.getValue().getCliente().getNome()));
         colunaSobrenome.setCellValueFactory(
                 cellData -> new SimpleStringProperty(cellData.getValue().getCliente().getSobrenome()));
         colunaStatus
@@ -45,8 +53,19 @@ public class ListarPizzasAdminController {
 
             {
                 detailsButton.setOnAction(event -> {
-                    Pedido pedido = getTableView().getItems().get(getIndex());
+                    Pedido pedidoSelecionado = getTableView().getItems().get(getIndex());
                     // Handle details button action
+                    pedido.setPedido(pedidoSelecionado);
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("detalharPedidoAdmin.fxml"));
+                    Parent root;
+                    try {
+                        root = loader.load();
+                        Stage stage = (Stage) ordersTable.getScene().getWindow();
+                        stage.setScene(new Scene(root));
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
                 });
             }
 
@@ -62,5 +81,21 @@ public class ListarPizzasAdminController {
         });
 
         ordersTable.setItems(FXCollections.observableArrayList(pedidosSingleton.getPedidos()));
+    }
+
+    @FXML
+    private void handleBack() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
+        Parent root = loader.load();
+        Stage stage = (Stage) ordersTable.getScene().getWindow();
+        stage.setScene(new Scene(root));
+    }
+
+    @FXML
+    private void handleEditarValores() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("editarValores.fxml"));
+        Parent root = loader.load();
+        Stage stage = (Stage) ordersTable.getScene().getWindow();
+        stage.setScene(new Scene(root));
     }
 }

@@ -146,7 +146,7 @@
 }
 
 /* /* New styles for TableView */
-/* .table-view {
+.table-view {
     -fx-background-color: white;
     -fx-border-color: #ccc;
     -fx-border-radius: 5px;
@@ -167,7 +167,7 @@
     -fx-text-fill: white;
 }
 
-.table-view .table-row-cell {
+/* .table-view .table-row-cell {
     -fx-background-color: white;
     -fx-border-color: #eee;
     -fx-border-width: 0 0 1px 0;

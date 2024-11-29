@@ -2,6 +2,8 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.HBox?>
@@ -21,7 +23,7 @@
         stylesheets="@styles.css"
         xmlns="http://javafx.com/javafx/23.0.1"
         xmlns:fx="http://javafx.com/fxml/1"
-        fx:controller="com.br.pizzaria.DetalharPedido">
+        fx:controller="com.br.pizzaria.DetalharPedidoAdminController">
     <children>
         <HBox
                 alignment="CENTER"
@@ -60,23 +62,30 @@
                 <Text
                         strokeType="OUTSIDE"
                         strokeWidth="0.0"
-                        text="Status">
+                        text="Status: ">
                     <font>
                         <Font size="36.0"/>
                     </font>
                 </Text>
-                <Text
-                        fx:id="pedidoStatus"
-                        fill="RED"
-                        strokeType="OUTSIDE"
-                        strokeWidth="0.0"
-                        text="STATUS">
-                    <font>
-                        <Font
-                                name="MonoLisa-Bold"
-                                size="36.0"/>
-                    </font>
-                </Text>
+                <MenuButton
+                        fx:id="statusButton"
+                        mnemonicParsing="false"
+                        text="Status">
+                    <items>
+                        <MenuItem
+                                mnemonicParsing="false"
+                                onAction="#handleStatusChange"
+                                text="Aberto"/>
+                        <MenuItem
+                                mnemonicParsing="false"
+                                onAction="#handleStatusChange"
+                                text="A Caminho"/>
+                        <MenuItem
+                                mnemonicParsing="false"
+                                onAction="#handleStatusChange"
+                                text="Entregue"/>
+                    </items>
+                </MenuButton>
             </children>
         </HBox>
         <TableView
@@ -122,6 +131,6 @@
         <Button
                 mnemonicParsing="false"
                 onAction="#handleVoltar"
-                text="Voltar ao Menu Principal"/>
+                text="Voltar"/>
     </children>
 </VBox>
