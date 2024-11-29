@@ -34,9 +34,9 @@ public class EditarValoresController {
         PizzaCategorias.ESPECIAL.setValor(Double.parseDouble(especialField.getText()));
         PizzaCategorias.PREMIUM.setValor(Double.parseDouble(premiumField.getText()));
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("ListarPedidosAdmin.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("listarPedidosAdmin.fxml"));
         Parent root = loader.load();
-        Stage stage = (Stage) normalField.getScene().getWindow();
+        Stage stage = (Stage) especialField.getScene().getWindow();
         stage.setScene(new Scene(root));
     }
 }
