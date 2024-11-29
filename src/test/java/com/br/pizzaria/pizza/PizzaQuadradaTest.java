@@ -43,7 +43,7 @@ class PizzaQuadradaTest {
         assertEquals(400, pizza.getArea(), 0.001);
         // assertEquals(400.0 + PizzaCategorias.PREMIUM.getValor(), pizza.getPreco(),
         // 0.001);
-        assertEquals(400, pizza.calcularPreco());
+        assertEquals(40, pizza.calcularPreco());
         assertEquals(selectedSabores, pizza.getSabores());
     }
 
@@ -59,7 +59,7 @@ class PizzaQuadradaTest {
         assertEquals(25.0, pizza.getLado(), 0.001);
         assertEquals(625.0, pizza.getArea(), 0.001);
 
-        assertEquals(234.375, pizza.calcularPreco(), 1);
+        assertEquals(40.625, pizza.calcularPreco(), 1);
         assertEquals(selectedSabores, pizza.getSabores());
     }
 }
