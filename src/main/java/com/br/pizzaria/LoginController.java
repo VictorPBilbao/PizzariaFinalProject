@@ -123,7 +123,7 @@ public class LoginController implements Initializable {
 
     @FXML
     private void handleAcessarAdmin() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("acessarAdmin.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("listarPizzasAdmin.fxml"));
         Parent root = loader.load();
         Stage stage = (Stage) identificadorPedidoField.getScene().getWindow();
         stage.setScene(new Scene(root));
