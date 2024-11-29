@@ -1,6 +1,3 @@
-
-
-
 # 🍕 Pizzaria Final Project
 
 Um empreendedor resolveu criar uma pizzaria diferente das que existem no mercado. A sua ideia é vender pizza em centímetro quadrado, no lugar das tradicionais pequena, média e grande. Além disso, também resolveu inovar na forma da pizza que pode assumir a forma tradicional circular, um quadrado, ou um triângulo. O preço de cada pizza será definido pela área em centímetros quadrados, cruzado com o tipo da pizza (dependendo dos ingredientes). Os sabores das pizzas estão divididos em Simples, Especial e Premium.
@@ -9,8 +6,8 @@ Um empreendedor resolveu criar uma pizzaria diferente das que existem no mercado
   - [📋 Features](#-features)
   - [🛣️ Roadmap](#️-roadmap)
   - [📊 Diagrama de Classes](#-diagrama-de-classes)
-  - [🚀 How to run the project](#-how-to-run-the-project)
-  - [📁 Project Strucure](#-project-strucure)
+  - [🚀 Como executar o projeto](#-como-executar-o-projeto)
+  - [📁 Estrutura do Projeto](#-estrutura-do-projeto)
 
 ## 📋 Features
 
@@ -40,9 +37,14 @@ Um empreendedor resolveu criar uma pizzaria diferente das que existem no mercado
 
 - [x] Implementar cadastro de clientes.
 - [x] Implementar realização de pedidos.
-- [x] Implementar atualização de preços.
-- [x] Implementar cadastro de sabores.
-- [x] Implementar gestão de pedidos.
+- [x] Implementar cálculo do preço total da venda.
+- [x] Implementar armazenamento dos pedidos e seus estados.
+- [x] Implementar imagens e estilos nas telas.
+- [x] Implementar validações nos campos das telas.
+- [x] Implementar tratamento qualificado das exceções.
+- [ ] Implementar atualização de preços.
+- [ ] Implementar cadastro de sabores.
+- [ ] Implementar gestão de pedidos.
 - [ ] Melhorar interface do usuário.
 - [ ] Adicionar mais testes unitários.
 
@@ -136,46 +138,47 @@ classDiagram
     }
 ```
 
-## 🚀 How to run the project
+## 🚀 Como executar o projeto
 
-1. Clone the repository.
+1. Clone o repositório.
 
 ```bash	
-git clone https://github.com/yourusername/PizzariaFinalProject.git
+git clone https://github.com/seuusuario/PizzariaFinalProject.git
 cd PizzariaFinalProject
 ```
 
-2. Build the project using Maven.
+2. Construa o projeto usando Maven.
 
 ```bash
 mvn clean install
 ```
 
-3. Run the project.
+3. Execute o projeto.
 
 ```bash
 java -jar target/pizzaria-final-project-0.0.1-SNAPSHOT.jar
 ```
 
-## 📁 Project Strucure
+## 📁 Estrutura do Projeto
 
 ```
 PizzariaFinalProject/
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── com/
-│   │   │       └── br/
-│   │   │           └── pizzaria/
-│   │   │               ├── App.java
-│   │   │               ├── clientes/
-│   │   │               ├── pedidos/
-│   │   │               └── pizzas/
-│   └── test/
-│       ├── java/
-│       │   └── com/
-│       │       └── br/
-│       │           └── pizzaria/
-├── pom.xml
-└── README.md
+└── src/
+    ├── main/
+    │   ├── java/
+    │   │   ├── com/
+    │   │   │   └── br/
+    │   │   │       └── pizzaria/
+    │   │   │           ├── cliente/          # Pacote contendo classes relacionadas aos clientes
+    │   │   │           ├── pedido/           # Pacote contendo classes relacionadas aos pedidos
+    │   │   │           ├── pizza/            # Pacote contendo classes relacionadas às pizzas
+    │   │   │           └── App.java          # Classe principal para execução da aplicação
+    │   │   └── module-info.java              # Arquivo de configuração do módulo Java
+    │   └── resources/
+    │       ├── com/
+    │       │   └── br/
+    │       │       └── pizzaria              # Recursos estáticos da aplicação
+    │       └── MANIFEST.MF                   # Arquivo de manifesto do projeto
+    ├── pom.xml                               # Arquivo de configuração do Maven
+    └── README.md                             # Este arquivo de documentação
 ```
