@@ -11,6 +11,7 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.collections.FXCollections;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.transformation.FilteredList;
 
 public class ListarPedidosAdminController {
 
@@ -38,6 +39,8 @@ public class ListarPedidosAdminController {
     private final PedidosSingleton pedidosSingleton = PedidosSingleton.getInstance();
 
     PedidoSingleton pedido = PedidoSingleton.getInstance();
+
+    private FilteredList<Pedido> filteredData;
 
     @FXML
     public void initialize() {
@@ -80,7 +83,22 @@ public class ListarPedidosAdminController {
             }
         });
 
-        ordersTable.setItems(FXCollections.observableArrayList(pedidosSingleton.getPedidos()));
+        filteredData = new FilteredList<>(FXCollections.observableArrayList(pedidosSingleton.getPedidos()), p -> true);
+        ordersTable.setItems(filteredData);
+    }
+
+    @FXML
+    private void filterOrders() {
+        String filterText = filterField.getText().toLowerCase();
+        filteredData.setPredicate(pedido -> {
+            if (filterText == null || filterText.isEmpty()) {
+                return true;
+            }
+            return pedido.getCliente().getNome().toLowerCase().contains(filterText) ||
+                    pedido.getCliente().getSobrenome().toLowerCase().contains(filterText) ||
+                    pedido.getEstado().toString().toLowerCase().contains(filterText) ||
+                    pedido.getId().toLowerCase().contains(filterText);
+        });
     }
 
     @FXML
