@@ -42,10 +42,10 @@ Um empreendedor resolveu criar uma pizzaria diferente das que existem no mercado
 - [x] Implementar imagens e estilos nas telas.
 - [x] Implementar validações nos campos das telas.
 - [x] Implementar tratamento qualificado das exceções.
-- [ ] Implementar atualização de preços.
+- [x] Implementar atualização de preços.
+- [x] Implementar gestão de pedidos.
+- [x] Melhorar interface do usuário.
 - [ ] Implementar cadastro de sabores.
-- [ ] Implementar gestão de pedidos.
-- [ ] Melhorar interface do usuário.
 - [ ] Adicionar mais testes unitários.
 
 ## 📊 Diagrama de Classes
