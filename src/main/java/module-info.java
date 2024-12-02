@@ -5,8 +5,8 @@ module com.br.pizzaria {
 
     opens com.br.pizzaria to javafx.fxml;
 
+    exports com.br.pizzaria;
     exports com.br.pizzaria.cliente;
     exports com.br.pizzaria.pizza;
     exports com.br.pizzaria.pedido;
-    exports com.br.pizzaria;
 }
